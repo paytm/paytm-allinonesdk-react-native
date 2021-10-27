@@ -33,6 +33,7 @@ const App = () => {
   const [mid, setMid] = useState('AliSub58582630351896');
   const [orderId, setOrderId] = useState('PARCEL15942011933');
   const [amount, setAmount] = useState('1');
+  const [urlScheme, setURLScheme] = useState('');
   const [tranxToken, setTranxToken] = useState('b9097bda72af4db0a9aa2d00e58a7d451594201196818');
   const [showToast, setShowToast] = useState('');
   const [isStaging, setIsStaging] = useState(false);
@@ -60,6 +61,7 @@ const App = () => {
       '',
       isStaging,
       appInvokeRestricted,
+      urlScheme,
     )
     .then((result) => {
       console.log("result", result);
@@ -94,6 +96,12 @@ const App = () => {
                 style={styles.textInput}
                 defaultValue={orderId}
                 onChangeText={(e) => setOrderId(e)}
+              />
+              <Text style={styles.textStyle}>URL Scheme</Text>
+              <TextInput
+                style={styles.textInput}
+                defaultValue={urlScheme}
+                onChangeText={(e) => setURLScheme(e)}
               />
               <Text style={styles.textStyle}>Amount</Text>
               <TextInput
